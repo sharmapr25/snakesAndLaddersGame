@@ -15,10 +15,14 @@ const gameMonitor = new GameMonitor();
 const game = new Game(board, player, dices.NORMAL);
 game.addMonitor(gameMonitor);
 
-let turns = 10;
+let turns = process.argv[2] || 10;
 while(turns !== 0){
-  game.rollTheDice();
-  turns -= 1;
+  try{
+    game.rollTheDice();
+    turns -= 1;
+  }catch(error){
+    turns = 0;
+  }
 }
 
 console.log(gameMonitor.printActivites());

@@ -42,3 +42,17 @@ describe("addSnakeBiteActivity", () => {
     expect(activities).toBe(expectedActivities);
   });
 });
+
+describe("addPlayerWonGameActivity", () => {
+  it("should add won game activity when player won the game", () => {
+    const gameMonitor = new GameMonitor();
+    const player = new Player("Alice", 100);
+
+    gameMonitor.addPlayerWonGameActivity(player);
+    const activities = gameMonitor.printActivites();
+
+    const expectedActivities = "Congratulation Alice!! You have won the game";
+
+    expect(activities).toBe(expectedActivities);
+  });
+});

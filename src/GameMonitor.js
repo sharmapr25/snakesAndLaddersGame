@@ -11,9 +11,15 @@ class GameMonitor {
     this._acivities.push(`Rolled dice: ${number}`);
   }
 
-  addSnakeBiteActivity(snake, player){
-    this._acivities.push(`${player.name} got bitten by snake at position: ${snake.headPosition}`);
+  addSnakeBiteActivity(snake, player) {
+    this._acivities.push(
+      `${player.name} got bitten by snake at position: ${snake.headPosition}`
+    );
     this.addPlayerMovementActivity(player);
+  }
+
+  addPlayerWonGameActivity(player){
+    this._acivities.push(`Congratulation ${player.name}!! You have won the game`);
   }
 
   printActivites() {

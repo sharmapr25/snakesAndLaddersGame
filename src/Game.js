@@ -14,6 +14,7 @@ class Game {
 
   rollTheDice(){
     if(this._board.isPlayerOnLastPosition(this._player)){
+      this._monitor && this._monitor.addPlayerWonGameActivity(this._player);
       throw new GameHasAlreadyWonError();
     }
 
