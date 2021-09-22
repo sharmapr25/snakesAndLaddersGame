@@ -1,8 +1,8 @@
-const Board = require("./src/Board");
-const dices = require("./src/Dice");
+const Board = require("./src/board");
+const dices = require("./src/dice");
 const Game = require("./src/game");
-const Player = require("./src/Player");
-const GameMonitor = require("./src/GameMonitor");
+const Player = require("./src/player");
+const GameMonitor = require("./src/gameMonitor");
 
 const board = new Board(100);
 board.addSnake(17,7);

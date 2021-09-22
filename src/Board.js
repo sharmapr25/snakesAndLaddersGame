@@ -1,4 +1,4 @@
-const Snake = require("./Snake");
+const Snake = require("./snake");
 
 class Board {
   constructor(size) {

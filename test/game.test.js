@@ -1,8 +1,8 @@
-const Board = require("../src/Board");
+const Board = require("../src/board");
 const Game = require("../src/game");
-const Player = require("../src/Player");
-const dices = require("../src/Dice");
-const GameHasAlreadyWonError = require("../src/error/GameHasAlreadyWonError");
+const Player = require("../src/player");
+const dices = require("../src/dice");
+const GameHasAlreadyWonError = require("../src/error/gameHasAlreadyWonError");
 
 describe('rollTheDice', () => {
   it('should move player to position 4 from 0 after rolling dice', () => {

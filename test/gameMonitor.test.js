@@ -1,6 +1,6 @@
-const GameMonitor = require("../src/GameMonitor");
-const Player = require("../src/Player");
-const Snake = require("../src/Snake");
+const GameMonitor = require("../src/gameMonitor");
+const Player = require("../src/player");
+const Snake = require("../src/snake");
 
 describe('addPlayerMovementActivity', () => {
   it('should add player activity movement for a given player', () => {

@@ -1,5 +1,5 @@
-const Board = require("../src/Board");
-const Player = require("../src/Player");
+const Board = require("../src/board");
+const Player = require("../src/player");
 
 describe('movePlayer', () => {
   it("should move player to 3rd position when roll a dice and number is 3", () => {

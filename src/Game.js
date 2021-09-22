@@ -1,4 +1,4 @@
-const GameHasAlreadyWonError = require("./error/GameHasAlreadyWonError");
+const GameHasAlreadyWonError = require("./error/gameHasAlreadyWonError");
 
 class Game {
   constructor(board, player, dice) {
