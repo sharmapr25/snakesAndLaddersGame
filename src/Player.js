@@ -4,6 +4,10 @@ class Player{
     this._position = position;
   }
 
+  get name(){
+    return this._name;
+  }
+  
   get position(){
     return this._position;
   }
