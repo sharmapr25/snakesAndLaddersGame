@@ -33,6 +33,13 @@ describe('movePlayer', () => {
     board.movePlayer(alice, 4);
     expect(alice.position).toEqual(10);
   });
+
+  it("should move player to 100 for given dice number is 4 when player current position is 99", () => {
+    const board = new Board(100);
+    const alice = new Player("Alice", 99);
+    board.movePlayer(alice, 4);
+    expect(alice.position).toEqual(100);
+  });
 });
 
 describe("isPlayerOnLastPosition", () => {

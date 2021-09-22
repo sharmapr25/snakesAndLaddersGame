@@ -14,8 +14,14 @@ class Board {
     return this._snakes.find((snake) => snake.isOnSamePosition(playerPosition));
   }
 
+  _addNewPosition(player, positionToMove){
+    const newPosition = player.position + positionToMove;
+    player.position = newPosition > this._size ? this._size: newPosition;
+
+  }
+
   movePlayer(player, position) {
-    player.position = player.position + position;
+    this._addNewPosition(player, position);
     this._monitor && this._monitor.addPlayerMovementActivity(player);
     const snake = this._getAnySnakeOnPosition(player.position);
     if (snake) {
