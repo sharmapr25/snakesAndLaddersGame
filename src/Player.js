@@ -1,7 +1,7 @@
 class Player{
-  constructor(name){
+  constructor(name, position=0){
     this._name = name;
-    this._position = 0;
+    this._position = position;
   }
 
   get position(){
@@ -9,7 +9,7 @@ class Player{
   }
 
   set position(position){
-    this._position = position;
+    this._position += position;
   }
 }
 
