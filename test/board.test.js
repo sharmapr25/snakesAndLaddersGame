@@ -34,3 +34,20 @@ describe('movePlayer', () => {
     expect(alice.position).toEqual(10);
   });
 });
+
+describe("isPlayerOnLastPosition", () => {
+  it('should return true when given player is on same position as board size', () => {
+    const board = new Board(100);
+    const alice = new Player("Alice", 100);
+
+    expect(board.isPlayerOnLastPosition(alice)).toBeTruthy();
+
+  });
+
+   it("should return false when given player is not on the same position as board size", () => {
+     const board = new Board(100);
+     const alice = new Player("Alice", 10);
+
+     expect(board.isPlayerOnLastPosition(alice)).toBeFalsy();
+   });
+});

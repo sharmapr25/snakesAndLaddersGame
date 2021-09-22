@@ -1,3 +1,5 @@
+const GameHasAlreadyWonError = require("./error/GameHasAlreadyWonError");
+
 class Game {
   constructor(board, player, dice) {
     this._board = board;
@@ -11,6 +13,10 @@ class Game {
   }
 
   rollTheDice(){
+    if(this._board.isPlayerOnLastPosition(this._player)){
+      throw new GameHasAlreadyWonError();
+    }
+
     const number = this._dice.roll();
     this._monitor && this._monitor.addRolledDiceActivity(number);
     this._board.movePlayer(this._player, number);

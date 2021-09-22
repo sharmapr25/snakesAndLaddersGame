@@ -2,6 +2,7 @@ const Board = require("../src/Board");
 const Game = require("../src/game");
 const Player = require("../src/Player");
 const dices = require("../src/Dice");
+const GameHasAlreadyWonError = require("../src/error/GameHasAlreadyWonError");
 
 describe('rollTheDice', () => {
   it('should move player to position 4 from 0 after rolling dice', () => {
@@ -47,6 +48,19 @@ describe('rollTheDice', () => {
     game.rollTheDice();
 
     expect(player.position).toBe(7);
+  });
+
+  it("should throw GameHasAlreadyWonError when player roll the dice and player reached the board last position", () => {
+    const board = new Board(4);
+    const player = new Player("Alice");
+    const mockedDice = dices.NORMAL;
+    mockedDice.roll = jest.fn(() => 4);
+
+    const game = new Game(board, player, mockedDice);
+    game.rollTheDice();
+
+    expect(player.position).toBe(4);
+    expect(() => game.rollTheDice()).toThrow(GameHasAlreadyWonError);
   });
 
 });
