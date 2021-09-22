@@ -9,7 +9,7 @@ class Player{
   }
 
   set position(position){
-    this._position += position;
+    this._position = position;
   }
 }
 
