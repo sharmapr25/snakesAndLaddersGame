@@ -6,8 +6,8 @@ class Board {
     this._snakes = [];
   }
 
-  addSnake(snakePosition, length) {
-    this._snakes.push(new Snake(snakePosition, length));
+  addSnake(headPosition, tailPosition) {
+    this._snakes.push(new Snake(headPosition, tailPosition));
   }
 
   _getAnySnakeOnPosition(playerPosition) {
