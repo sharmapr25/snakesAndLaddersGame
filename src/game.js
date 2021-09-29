@@ -1,10 +1,10 @@
 const GameHasAlreadyWonError = require("./error/gameHasAlreadyWonError");
 
 class Game {
-  constructor(board, player, dice) {
+  constructor(board, player, dices) {
     this._board = board;
     this._player = player;
-    this._dice = dice;
+    this._dices = dices;
   }
 
   addMonitor(monitor){
@@ -18,9 +18,13 @@ class Game {
       throw new GameHasAlreadyWonError();
     }
 
-    const number = this._dice.roll();
-    this._monitor && this._monitor.addRolledDiceActivity(number);
-    this._board.movePlayer(this._player, number);
+    const total = this._dices.reduce((sum, dice) => {
+      const number = dice.roll();
+      this._monitor && this._monitor.addRolledDiceActivity(number);
+      return sum + number;
+    },0);
+
+    this._board.movePlayer(this._player, total);
   }
 }
 

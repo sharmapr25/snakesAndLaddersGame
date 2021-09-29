@@ -19,17 +19,25 @@ describe('bite', () => {
   it('should change player position to 7 when snake bite a player with tail on position 7', () => {
     const snake = new Snake(14, 7);
     const player = new Player('Alice', 14);
-    snake.bite(player);
+    snake.action(player);
 
     expect(player.position).toBe(7);
 
   });
 
-   it("should change player position to 5 when snake bite a player with tail on position 5", () => {
-     const snake = new Snake(14, 5);
-     const player = new Player("Alice", 14);
-     snake.bite(player);
+  it("should change player position to 5 when snake bite a player with tail on position 5", () => {
+    const snake = new Snake(14, 5);
+    const player = new Player("Alice", 14);
+    snake.action(player);
 
-     expect(player.position).toBe(5);
-   });
+    expect(player.position).toBe(5);
+  });
+
+  it("should change player position to 5 when snake bite a player with tail on position 5", () => {
+    const snake = new Snake(14, 5);
+    const player = new Player("Alice", 14);
+    snake.action(player);
+
+    expect(player.position).toBe(5);
+  });
 });

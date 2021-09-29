@@ -12,7 +12,7 @@ class Snake{
     return this._headPosition;
   }
 
-  bite(player){
+  action(player){
     player.position = this._tailPosition;
   }
 
